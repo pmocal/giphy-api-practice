@@ -6,15 +6,26 @@
 </head>
 <body>
   <img src="#">
+  <input id="input"></input>
+  <button id="loadanother">Load GIFs</button>
   <script>
   	const img = document.querySelector('img')
-  	fetch('https://api.giphy.com/v1/gifs/translate?api_key=JPATCxkiYzTOAR7667lKYr7ZmxWKQdaD&s=cats', {mode: 'cors'})
+
+  	function fetchGIFs(searchTerm) {
+  		fetch('https://api.giphy.com/v1/gifs/translate?api_key=JPATCxkiYzTOAR7667lKYr7ZmxWKQdaD&s=' + searchTerm, {mode: 'cors'})
   		.then(function(response) {
   			return response.json()
   		})
   		.then(function(response) {
   			img.src = response.data.images.original.url;
   		})
+  	}
+
+  	fetchGIFs('cats');
+  	
+  	document.getElementById("loadanother").addEventListener("click", function(){
+  		fetchGIFs(document.getElementById("input").value);
+  	})
   </script>
 </body>
 </html>
