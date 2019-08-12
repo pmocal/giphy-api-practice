@@ -11,21 +11,36 @@
   <script>
   	const img = document.querySelector('img')
 
+  	if (window.performance) {
+		console.info("window.performance works fine on this browser");
+	}
+	if (performance.navigation.type == 1) {
+		console.info( "This page is reloaded" );
+	} else {
+		console.info( "This page is not reloaded");
+	}
+
   	function fetchGIFs(searchTerm) {
   		fetch('https://api.giphy.com/v1/gifs/translate?api_key=JPATCxkiYzTOAR7667lKYr7ZmxWKQdaD&s=' + searchTerm, {mode: 'cors'})
   		.then(function(response) {
-  			return response.json()
+			if(response.ok) {
+				return response.json();
+			}
+  			throw new Error('Network response was not ok.');
   		})
   		.then(function(response) {
   			img.src = response.data.images.original.url;
-  		})
+  		}).catch(function(error) {
+		  console.log('There has been a problem with your fetch operation: ', error.message);
+		});
   	}
 
   	fetchGIFs('cats');
   	
-  	document.getElementById("loadanother").addEventListener("click", function(){
+  	document.getElementById("loadanother").addEventListener("click", function(event){
+  		event.preventDefault();
   		fetchGIFs(document.getElementById("input").value);
-  	})
+  	});
   </script>
 </body>
 </html>
