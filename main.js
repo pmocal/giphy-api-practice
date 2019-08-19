@@ -21,7 +21,7 @@ async function fetchGIFs(searchTerm) {
 		const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=JPATCxkiYzTOAR7667lKYr7ZmxWKQdaD&s='
 			+ searchTerm, {mode: 'cors'})
 		const responseJson = await response.json();
-		document.querySelector('img').src = responseJson.data.images.original.url;
+		document.getElementById('gif').src = responseJson.data.images.original.url;
 	} catch(error) {
 	    console.log('There has been a problem with your fetch operation: ', error.message);
 	};
