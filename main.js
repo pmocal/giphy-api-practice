@@ -26,7 +26,3 @@ async function fetchGIFs(searchTerm) {
 	    console.log('There has been a problem with your fetch operation: ', error.message);
 	};
 }
-
-module.exports = {
-    fetchGIFs: fetchGIFs
-}
