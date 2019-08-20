@@ -27,4 +27,4 @@ async function fetchGIFs(searchTerm) {
 	};
 }
 
-module.exports = { fetchGIFs };
+export default fetchGIFs
