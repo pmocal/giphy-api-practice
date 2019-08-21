@@ -2,7 +2,12 @@
   "name": "@pmocal/giphy",
   "version": "2.11.0",
   "main": "main.js",
+  "build": "webpack",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   }
 }
