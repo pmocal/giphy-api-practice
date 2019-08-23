@@ -3,7 +3,8 @@
   "version": "3.1.0",
   "main": "main.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.17.1"
@@ -11,5 +12,16 @@
   "devDependencies": {
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
-  }
+  },
+  "description": "![npm](https://img.shields.io/npm/v/@pmocal/giphy)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmocal/giphy-api-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmocal/giphy-api-practice/issues"
+  },
+  "homepage": "https://github.com/pmocal/giphy-api-practice#readme"
 }
