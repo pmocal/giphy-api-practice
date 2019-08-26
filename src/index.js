@@ -1,4 +1,5 @@
 async function fetchGIFs(searchTerm) {
+	console.log('fetchGIFs');
 	try {
 		const response = await fetch('https://api.giphy.com/v1/gifs/translate?api_key=JPATCxkiYzTOAR7667lKYr7ZmxWKQdaD&s='
 			+ searchTerm, {mode: 'cors'})
@@ -23,6 +24,7 @@ function main() {
 	fetchGIFs('cats');
 
 	document.getElementById("loadanother").addEventListener("click", function(event){
+		console.log('main event listener');
 		event.preventDefault();
 		fetchGIFs(document.getElementById("input").value);
 	});
@@ -30,4 +32,4 @@ function main() {
 
 main();
 
-module.exports = { fetchGIFs };
+module.exports.fetchGIFs = fetchGIFs;
