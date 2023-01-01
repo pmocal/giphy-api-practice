@@ -10,8 +10,8 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "description": "![npm](https://img.shields.io/npm/v/@pmocal/giphy)",
   "repository": {
